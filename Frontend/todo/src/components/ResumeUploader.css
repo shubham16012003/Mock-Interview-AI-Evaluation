@@ -1,0 +1,347 @@
+.resume-analysis-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+.analysis-header h1 {
+  font-size: 2.2rem;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+
+.analysis-header p {
+  color: #555;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.divider {
+  border-bottom: 1px solid #e0e0e0;
+  margin: 25px 0;
+}
+
+.upload-area {
+  border: 2px dashed #d1d5db;
+  padding: 40px 30px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #f9fafb;
+  margin-bottom: 20px;
+}
+
+.upload-area.active {
+  border-color: #10b981;
+  background-color: #ecfdf5;
+  box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.1);
+}
+
+.upload-content .upload-icon {
+  font-size: 48px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+.upload-content h3 {
+  font-size: 1.4rem;
+  color: #374151;
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.upload-content p {
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+.file-input-label {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 24px;
+  background-color: #10b981;
+  color: white;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.file-input-label:hover {
+  background-color: #0d9e6e;
+  transform: translateY(-1px);
+}
+
+.file-preview {
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #374151;
+  background: #f3f4f6;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border-left: 3px solid #10b981;
+}
+
+.file-icon {
+  font-size: 22px;
+  color: #6b7280;
+}
+
+.check-icon {
+  color: #10b981;
+  font-size: 20px;
+}
+
+.analyze-btn {
+  margin-top: 20px;
+  padding: 14px 28px;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 1.05rem;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 300px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.analyze-btn:hover:not(:disabled) {
+  background-color: #2563eb;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.analyze-btn:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  border-top-color: white;
+  animation: spin 1s ease-in-out infinite;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.analysis-card {
+  margin-top: 40px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
+  padding: 30px;
+  animation: fadeInUp 0.6s ease;
+  border: 1px solid #e5e7eb;
+}
+
+.score-header {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin-bottom: 30px;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.score-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border: 6px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.score-circle span {
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.score-circle small {
+  font-size: 14px;
+  color: #6b7280;
+  margin-top: 5px;
+  font-weight: 500;
+}
+
+.score-summary h3 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.score-summary p {
+  color: #4b5563;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.error-message {
+  background: #fff4f4;
+  border-left: 4px solid #ff7675;
+  padding: 12px;
+  border-radius: 4px;
+  margin-top: 15px;
+  color: #ff5252;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+.result-content {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.result-section {
+  background: #f9fafb;
+  padding: 20px;
+  border-radius: 12px;
+  border-left: 4px solid;
+}
+
+.result-section h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.result-section ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.result-section li {
+  margin-bottom: 12px;
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.result-section li:before {
+  content: '•';
+  position: absolute;
+  left: 5px;
+  color: inherit;
+  font-weight: bold;
+}
+
+.raw-content {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  border: 1px solid #e0e0e0;
+}
+
+.analysis-paragraph {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #374151;
+}
+
+.analysis-paragraph:first-child {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.download-btn {
+  margin-top: 30px;
+  padding: 14px 24px;
+  background-color: #111827;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  justify-content: center;
+}
+
+.download-btn:hover {
+  background-color: #1f2937;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .resume-analysis-container {
+    padding: 20px;
+  }
+  
+  .score-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+  
+  .score-summary h3 {
+    font-size: 1.3rem;
+  }
+  
+  .score-circle {
+    width: 80px;
+    height: 80px;
+    border-width: 4px;
+  }
+  
+  .score-circle span {
+    font-size: 26px;
+  }
+  
+  .analyze-btn {
+    padding: 12px 20px;
+    font-size: 1rem;
+  }
+}
